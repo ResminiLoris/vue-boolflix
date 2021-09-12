@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @performSearch="performSearch"/>
-    <Main :movies="movies"/>
+    <Main :movies="movies" :series="series"/>
   </div>
 </template>
 
@@ -25,16 +25,17 @@ export default {
       searchTerm:'',
       //risultati ricerca
       movies:[],
+      series:[],
     }
   },
   methods:{
     //intercetto evento e eseguo ricerca 
     performSearch(userSearch){
-      console.log(this.searchTerm);
       this.searchTerm = userSearch;
-      axios.get(`${this.baseUri}/search/movie/${this.apiKey}&query=${this.searchTerm}`).then((res)=>{
-      this.movies=(res.data.results);
-     })
+      axios.get(`${this.baseUri}/search/movie/${this.apiKey}&language=it_IT&query=${this.searchTerm}`)
+      .then((res)=>{this.movies=(res.data.results);});
+      axios.get(`${this.baseUri}/search/tv/${this.apiKey}&language=it_IT&query=${this.searchTerm}`)
+      .then((res)=>{this.series=(res.data.results);});
     }
   }
 }
