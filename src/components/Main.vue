@@ -1,5 +1,5 @@
 <template>
-  <div class="main container">
+  <div v-if="searchTerm" class="main container">
       <!-- film -->
       <h1>Movies</h1>
       <ul>
@@ -34,7 +34,7 @@
 <script>
 export default {
     name: "Main",
-    props:['movies', 'series'],
+    props:['movies', 'series', 'searchTerm'],
 }
 </script>
 

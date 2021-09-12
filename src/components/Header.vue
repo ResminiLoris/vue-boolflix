@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <input v-model="userSearch" type="text"  v-on:keyup.enter="$emit('performSearch', userSearch)">    
+        <input v-model="userSearch" type="text" placeholder="cerca..."  v-on:keyup.enter="$emit('performSearch', userSearch)">    
     </div>  
 </template>
 
