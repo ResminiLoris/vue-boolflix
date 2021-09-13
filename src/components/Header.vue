@@ -24,7 +24,7 @@ export default {
     .header{
         height: 100px;
         background-color: black;
-        max-width: 100vw;
+        max-width: 1932px;
     }
     .logotext{
         font-size: 50px;

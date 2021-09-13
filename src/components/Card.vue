@@ -17,7 +17,10 @@
                     <div v-else-if="item.original_language=== 'it'"><strong class="text-danger">lingua originale:</strong><img class="leng-icon" src="../assets/img/it.svg" alt="ita"></div>
                     <div v-else ><strong class="text-danger">lingua originale:</strong>{{item.original_language}}</div>
                     <!-- voto -->
-                    <div><strong class="text-danger">voto:</strong>{{score}}</div>
+                    <span v-for="index in 5" :key="index">
+                        <i v-if="index <= score(item.vote_average)" class="fas fa-star"></i>
+                        <i v-else class="far fa-star"></i>
+                    </span>
                 </div>
             </div>
           </li>
@@ -35,11 +38,12 @@ export default {
             posterPlaceholder: 'https://www.altavod.com/assets/images/poster-placeholder.png',
         }
     },
-    computed:{
-        score(){
-            return Math.round(this.item.vote_average / 2)
+    
+    methods:{
+        score(vote){
+            return Math.round(vote / 2)
         }
-    },
+    }
 }
 </script>
 
@@ -63,8 +67,17 @@ export default {
         cursor: pointer;
         overflow: auto;
     }
+
+    
+    
     .hover-effect:hover{
         opacity: 100;
     } 
+
+    .fas,
+    .far
+    {
+        color: yellow;
+    }
     
 </style>

@@ -43,20 +43,29 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 html{
   background-color:gray;
-
 }
+  
+// html::-webkit-scrollbar {
+//   display: none;
+// }
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:gray;
-
-
+  overflow-y: hidden;
 }
+
 .container{
   max-width: 1300px;
   margin: 0 auto;
 }
+
+
 </style>

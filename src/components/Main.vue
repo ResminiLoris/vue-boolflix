@@ -38,7 +38,11 @@ export default {
 <style  lang="scss">
 
 .main{
-    width: 100vw;
+  
+}
+
+.main::-webkit-scrollbar {
+    display: none;
 }
 
 ul{
